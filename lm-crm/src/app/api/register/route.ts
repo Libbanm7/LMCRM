@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { connectDb } from '@/src/lib/db';
-import { User } from '@/src/models/user';
-import { hashPassword } from '@/src/lib/password';
-import { registerSchema } from '@/src/lib/validation/auth';
+import { connectDb } from '@/lib/db';
+import { User } from '@/models/user';
+import { hashPassword } from '@/lib/password';
+import { registerSchema } from '@/lib/validation/auth';
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);

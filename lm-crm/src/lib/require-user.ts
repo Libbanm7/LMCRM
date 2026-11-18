@@ -1,4 +1,4 @@
-import { auth } from '@/src/auth';
+import { auth } from '@/auth';
 
 export async function requireUserId(): Promise<string | null> {
   const session = await auth();
