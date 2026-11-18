@@ -1,4 +1,5 @@
-import { auth, signOut } from '@/src/auth';
+import Link from 'next/link';
+import { auth, signOut } from '@/auth';
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -7,6 +8,9 @@ export default async function DashboardPage() {
     <main className="p-6">
       <h1 className="text-2xl font-semibold">Dashboard</h1>
       <p className="mt-2">Signed in as {session?.user?.email}</p>
+      <Link href="/profile" className="mt-2 inline-block underline">
+      Business profile
+      </Link>
       <form
         action={async () => {
           'use server';
